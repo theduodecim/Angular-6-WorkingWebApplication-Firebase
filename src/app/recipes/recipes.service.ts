@@ -1,0 +1,49 @@
+import {Injectable} from '@angular/core';
+import { Recipe } from './recipes.model';
+import {Ingredient} from '../shared/ingredient.model';
+import {ShopingListService} from '../shoping-list/shoping-list.service';
+import {Subject} from 'rxjs/Subject';
+
+
+@Injectable()
+export class RecipesService {
+  recipesChanged = new Subject<Recipe[]>();
+  private recipes: Recipe[] = [
+    new Recipe('A test Recipe', 'This is simply a test',
+      'http://www.seriouseats.com/recipes/assets_c/2016/05/20160605-frijoles-charros-5-thumb-1500xauto-432297.jpg',
+      [new Ingredient('meat', 1), new Ingredient('Frijoles', 25)
+      ]),
+    new Recipe('chinchu recipe',
+      'el chinchu lleno de tripa', 'https://i.ytimg.com/vi/yccm0rMSgHo/maxresdefault.jpg',
+      [new Ingredient('tripas', 1), new Ingredient('condimentos', 1)
+      ]),
+  ];
+
+  getRecipes() {
+    return this.recipes.slice();
+  }
+
+  getRecipe(index: number) {
+    return this.recipes[index];
+  }
+
+  addRecipe(recipe: Recipe) {
+    this.recipes.push(recipe);
+    this.recipesChanged.next(this.recipes.slice());
+  }
+
+  updateRecipe(index: number, newRecipe: Recipe) {
+    this.recipes[index] = newRecipe;
+    this.recipesChanged.next(this.recipes.slice());
+  }
+
+  constructor(private slService: ShopingListService) {
+  }
+
+
+  SetRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
+  }
+
+}

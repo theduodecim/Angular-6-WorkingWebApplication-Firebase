@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+       <app-header (featureSelected)="onNavigate($event)"></app-header>
+     <div class="col-md-12">
+       <router-outlet></router-outlet>
+      </div>
+    </div>
+    <!--<div class="row">
+      <div class="col-md-6">
+        <button (click)="login()" *ngIf="!name">Anonymous Login</button>
+
+        <input type="text" id="message" *ngIf="name" placeholder="what is it that you do?" (keyup.enter)="send($event.target.value)" [(ngModel)]="msgVal" />
+        <p *ngFor="let item of items | async"><img src="../assets/images/pin.svg">{{ item.message }}</p>
+      </div>
+    </div>-->
+  </div>
+ </div>
