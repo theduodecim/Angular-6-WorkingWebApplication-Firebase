@@ -19,6 +19,7 @@ import {HttpModule} from '@angular/http';
 import {DataStoregeService} from './shared/data-storege.service';
 import {RecipesService} from './recipes/recipes.service';
 import { AngularFireModule } from 'angularfire2';
+import { NotFoundComponent } from '../../dist/app/not-found/not-found.component';
 
 /*export const firebaseConfig = {
   apiKey: '',
@@ -43,7 +44,8 @@ import { AngularFireModule } from 'angularfire2';
     ShopingEditComponent,
     DropdownDirective,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
