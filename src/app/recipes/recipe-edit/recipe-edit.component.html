@@ -31,13 +31,14 @@
               id="imagePath"
               formControlName="imagePath"
               class="form-control"
-              required>
+              required
+            #imagePath>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <img src="" class="img-responsive">
+          <img [src]="imagePath.value" class="img-responsive">  <!-- if u want to display a preview of the img  bind [SRC] like this and look for the .value -->
         </div>
       </div>
       <div class="row">

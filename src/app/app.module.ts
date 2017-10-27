@@ -18,7 +18,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {DataStoregeService} from './shared/data-storege.service';
 import {RecipesService} from './recipes/recipes.service';
-import { AngularFireModule } from 'angularfire2';
 import {NotFoundComponent} from './not-found/not-found.component';
 
 /*export const firebaseConfig = {
