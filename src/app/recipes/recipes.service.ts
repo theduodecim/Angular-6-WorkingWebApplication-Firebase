@@ -40,9 +40,13 @@ export class RecipesService {
   constructor(private slService: ShopingListService) {
   }
 
-
   SetRecipes(recipes: Recipe[]) {
     this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
+  }
+ // this function deletes one of our recipes
+  deleteRecipe(index: number) {
+    this.recipes.splice(index, 1)
     this.recipesChanged.next(this.recipes.slice());
   }
 

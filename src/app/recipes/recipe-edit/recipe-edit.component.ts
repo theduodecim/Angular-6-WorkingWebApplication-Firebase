@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {RecipesService} from '../recipes.service';
 import {Recipe} from '../recipes.model';
@@ -12,7 +12,10 @@ export class RecipeEditComponent implements OnInit {
 id: number;
 editMode = false;
 recipeForm: FormGroup;
-  constructor(private route: ActivatedRoute, private recipeService: RecipesService) {}
+  constructor(private route: ActivatedRoute,
+              private recipeService: RecipesService,
+              private router: Router) {}  // router to navigate awayyyyyyyyyyyyyy awayy in the cancel function
+
 
   ngOnInit() {
     this.route.params
@@ -36,6 +39,7 @@ recipeForm: FormGroup;
     } else {
       this.recipeService.addRecipe(this.recipeForm.value);
     }
+    this.onCancel()
   }
 
  /* onAddIngredient() {
@@ -64,6 +68,9 @@ recipeForm: FormGroup;
           'imagePath': new FormControl(recipeImagePath, Validators.required),
           'description': new FormControl(recipeDescription, Validators.required),
         });
+    }
+    onCancel(){
+      this.router.navigate(['../'], {relativeTo: this.route})  //check that function this is how we navigate away from things...
     }
   }
 
