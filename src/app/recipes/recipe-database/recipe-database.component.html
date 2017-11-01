@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <input type="text" [(ngModel)]="filteredName" class="form-control">
+      <button class="btn btn-primary" (click)="onSave()">Save Server</button>
+      <hr>
+      <span *ngFor="let recipeDb of RecipeDB | filter: filteredName: 'name'">
+          <app-recipes-item
+            *ngFor="let recipeDb of RecipeDB"
+            [recipe]="recipeDb"
+          ></app-recipes-item>
+      </span>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { RecipesComponent } from './recipes/recipes.component';
@@ -19,6 +18,8 @@ import {HttpModule} from '@angular/http';
 import {DataStoregeService} from './shared/data-storege.service';
 import {RecipesService} from './recipes/recipes.service';
 import {NotFoundComponent} from './not-found/not-found.component';
+import { RecipeDatabaseComponent } from './recipes/recipe-database/recipe-database.component';
+import {RecipeFilterPipe} from './recipes/recipe-filter-pipe';
 
 /*export const firebaseConfig = {
   apiKey: '',
@@ -44,7 +45,9 @@ import {NotFoundComponent} from './not-found/not-found.component';
     DropdownDirective,
     RecipeStartComponent,
     RecipeEditComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    RecipeDatabaseComponent,
+    RecipeFilterPipe
   ],
   imports: [
     BrowserModule,

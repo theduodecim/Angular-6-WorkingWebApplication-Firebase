@@ -7,6 +7,7 @@ import {RecipeStartComponent} from './recipes/recipe-start/recipe-start.componen
 import {RecipesDetailComponent} from './recipes/recipes-detail/recipes-detail.component';
 import {RecipeEditComponent} from './recipes/recipe-edit/recipe-edit.component';
 import {NotFoundComponent} from './not-found/not-found.component';
+import {RecipeDatabaseComponent} from './recipes/recipe-database/recipe-database.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/recipe', pathMatch: 'full'} ,
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
     {path: ':id/edit', component: RecipeEditComponent}
   ]},
   { path: 'shoping-list', component: ShopingListComponent, data: { title: 'Shoping List' } },
+  { path: 'recipe-database', component: RecipeDatabaseComponent, data: { title: 'recipe-database' } },
   {path: 'not-found', component: NotFoundComponent, pathMatch: 'full' },
   {path: '**', redirectTo: '/not-found', data :{message: 'Not Found'}}
 ];

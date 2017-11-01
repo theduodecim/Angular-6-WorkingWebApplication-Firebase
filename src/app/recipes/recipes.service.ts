@@ -3,6 +3,7 @@ import { Recipe } from './recipes.model';
 import {Ingredient} from '../shared/ingredient.model';
 import {ShopingListService} from '../shoping-list/shoping-list.service';
 import {Subject} from 'rxjs/Subject';
+import {Http} from '@angular/http';
 
 
 @Injectable()
@@ -18,6 +19,12 @@ export class RecipesService {
       [new Ingredient('tripas', 1), new Ingredient('condimentos', 1)
       ]),
   ];
+
+  constructor(private http: Http, private slService: ShopingListService) {}
+
+  storeServers(servers: any[]) {
+    return this.http.post('https://recipe-app-d2a9c.firebaseio.com/data.json', servers);
+  }
 
   getRecipes() {
     return this.recipes.slice();
@@ -35,9 +42,6 @@ export class RecipesService {
   updateRecipe(index: number, newRecipe: Recipe) {
     this.recipes[index] = newRecipe;
     this.recipesChanged.next(this.recipes.slice());
-  }
-
-  constructor(private slService: ShopingListService) {
   }
 
   SetRecipes(recipes: Recipe[]) {
