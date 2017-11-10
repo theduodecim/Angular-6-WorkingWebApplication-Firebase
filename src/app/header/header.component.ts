@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import { DataStoregeService } from '../shared/data-storege.service';
 import { Response } from '@angular/http';
+import {AuthService} from '../auth/auth.service';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { Response } from '@angular/http';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  constructor(private DataStService: DataStoregeService) {}
+  constructor(private DataStService: DataStoregeService, private authservice: AuthService) {}
   icon: string;
   fullPath: string;
   onSaveData() {
@@ -20,6 +21,11 @@ export class HeaderComponent {
       }
       );
   }
+
+  onLogOut() {
+    this.authservice.logOut();
+  }
+
 
   onFetchData () {
     this.DataStService.getRecipes();

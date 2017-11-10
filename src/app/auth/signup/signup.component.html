@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-md-2 col-sm-offset-1 col-md-offset-2 pull-right">
+    <form (ngSubmit)="onSignup(f)" #f="ngForm">
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-16">
+        <label for="email">Mail</label>
+        <input type="email"
+               id="email"
+               required
+               name="email"
+               ngModel
+               email
+               #email="ngModel"
+               class="form-control">
+            <span class="help-block" *ngIf="!email.valid && email.touched">Please insert a correct Email</span>
+        <div class="form-group">
+          <label for="Password">Password</label>
+          <input type="password"
+                 id="password"
+                 name="password"
+                 required
+                 ngModel
+                 password
+                 #password="ngModel"
+                 class="form-control"
+                 [minlength]="6">
+          <span class="help-block" *ngIf="!password.valid && password.touched">Please insert a correct Password</span>
+          <label>Click this for free! to fill the box with the ✓ <input type="checkbox"></label>
+          <button type="submit" class="btn bg-primary">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <!--<div class="row" *ngIf="onSignup">
+      <div class="col-xs-12">
+        <h3>Your Credentials</h3>
+        <p>Username: {{  }}</p>
+        <p>Mail: {{  }}</p>
+        <p>Secret Question: Your first {{ }}</p>
+        <p>Answer: {{  }}</p>
+        <p>Gender: {{ }}</p>
+      </div>-->
+  </div>
+</div>

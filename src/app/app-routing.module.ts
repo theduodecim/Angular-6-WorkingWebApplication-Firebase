@@ -8,6 +8,8 @@ import {RecipesDetailComponent} from './recipes/recipes-detail/recipes-detail.co
 import {RecipeEditComponent} from './recipes/recipe-edit/recipe-edit.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {RecipeDatabaseComponent} from './recipes/recipe-database/recipe-database.component';
+import {SignupComponent} from './auth/signup/signup.component';
+import {SigninComponent} from './auth/signin/signin.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/recipe', pathMatch: 'full'} ,
@@ -19,6 +21,8 @@ const appRoutes: Routes = [
   ]},
   { path: 'shoping-list', component: ShopingListComponent, data: { title: 'Shoping List' } },
   { path: 'recipe-database', component: RecipeDatabaseComponent, data: { title: 'recipe-database' } },
+  {path: 'singin', component: SigninComponent},
+  {path: 'singup', component: SignupComponent},
   {path: 'not-found', component: NotFoundComponent, pathMatch: 'full' },
   {path: '**', redirectTo: '/not-found', data :{message: 'Not Found'}}
 ];

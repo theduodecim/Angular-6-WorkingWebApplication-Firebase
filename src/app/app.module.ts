@@ -20,6 +20,9 @@ import {RecipesService} from './recipes/recipes.service';
 import {NotFoundComponent} from './not-found/not-found.component';
 import { RecipeDatabaseComponent } from './recipes/recipe-database/recipe-database.component';
 import {RecipeFilterPipe} from './recipes/recipe-filter-pipe';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
+import {AuthService} from './auth/auth.service';
 
 /*export const firebaseConfig = {
   apiKey: '',
@@ -47,7 +50,9 @@ import {RecipeFilterPipe} from './recipes/recipe-filter-pipe';
     RecipeEditComponent,
     NotFoundComponent,
     RecipeDatabaseComponent,
-    RecipeFilterPipe
+    RecipeFilterPipe,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +62,7 @@ import {RecipeFilterPipe} from './recipes/recipe-filter-pipe';
     HttpModule,
     /*AngularFireModule.initializerApp(firebaseConfig)*/
   ],
-  providers: [ShopingListService, RecipesService, DataStoregeService],
+  providers: [ShopingListService, RecipesService, DataStoregeService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
