@@ -23,7 +23,7 @@
       <li> <a [routerLink]="['/shoping-list']">To Shopping List</a></li>
       <li> <a>To Shopping Detail</a></li>
       <li> <a [routerLink]="['edit']">Edit mode</a></li>
-      <li> <a (click)="onDeleteRecipe()">Delete</a></li>
+      <li> <a (click)="onDeleteRecipe()" *ngIf="authservice.isAuthenticated()">Delete</a></li>
     </ul>
   </div>
 </div>

@@ -10,14 +10,15 @@ import {NotFoundComponent} from './not-found/not-found.component';
 import {RecipeDatabaseComponent} from './recipes/recipe-database/recipe-database.component';
 import {SignupComponent} from './auth/signup/signup.component';
 import {SigninComponent} from './auth/signin/signin.component';
+import {AuthGuardService} from './auth/auth-guard.service';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/recipe', pathMatch: 'full'} ,
   { path: 'recipe', component: RecipesComponent, children: [
     {path: '', component: RecipeStartComponent},
-    {path: 'new', component: RecipeEditComponent},
+    {path: 'new', component: RecipeEditComponent, canActivate: [AuthGuardService] } ,
     {path: ':id',  component: RecipesDetailComponent},
-    {path: ':id/edit', component: RecipeEditComponent}
+    {path: ':id/edit', component: RecipeEditComponent, canActivate: [AuthGuardService] }
   ]},
   { path: 'shoping-list', component: ShopingListComponent, data: { title: 'Shoping List' } },
   { path: 'recipe-database', component: RecipeDatabaseComponent, data: { title: 'recipe-database' } },

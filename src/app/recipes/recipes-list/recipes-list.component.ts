@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import { Recipe } from '../recipes.model';
 import { RecipesService } from '../recipes.service';
+import {AuthService} from '../../auth/auth.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { RecipesService } from '../recipes.service';
 export class RecipesListComponent implements OnInit {
   recipes: Recipe[];
 
-  constructor(private recipeService: RecipesService, private router: Router, private route: ActivatedRoute) {
+  constructor(private recipeService: RecipesService, private router: Router, private route: ActivatedRoute, private authservice: AuthService ) {
   }
 
   ngOnInit() {
