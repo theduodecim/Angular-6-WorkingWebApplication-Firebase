@@ -10,9 +10,9 @@ import {Http} from '@angular/http';
 export class RecipesService {
   recipesChanged = new Subject<Recipe[]>();
   private recipes: Recipe[] = [
-    new Recipe('A test Recipe', 'This is simply a test',
-      'http://www.seriouseats.com/recipes/assets_c/2016/05/20160605-frijoles-charros-5-thumb-1500xauto-432297.jpg',
-      [new Ingredient('meat', 1), new Ingredient('Frijoles', 25)
+    new Recipe('The Mother of recipes', 'Mother of the recipes',
+      'https://i.ytimg.com/vi/2HhfhAfz9dE/maxresdefault.jpg',
+      [new Ingredient('magic', 1), new Ingredient('coffe', 25)
       ]),
     new Recipe('chinchu recipe',
       'el chinchu lleno de tripa', 'https://i.ytimg.com/vi/yccm0rMSgHo/maxresdefault.jpg',
