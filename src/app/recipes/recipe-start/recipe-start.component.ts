@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Params } from '@angular/router';
+import {HeaderComponent} from '../../header/header.component';
 
 @Component({
   selector: 'app-recipe-start',
@@ -12,4 +13,6 @@ export class RecipeStartComponent implements OnInit {
 
   ngOnInit() {
   }
+
+
 }

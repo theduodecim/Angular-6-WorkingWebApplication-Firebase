@@ -7,24 +7,24 @@
       <ul class="nav navbar-nav">
         <li routerLinkActive="active"><a [routerLink]="['/recipe']">Recipes</a></li>
         <li routerLinkActive="active"><a [routerLink]="['/shoping-list']">Shopping List</a></li>
-        <li routerLinkActive="active"><a [routerLink]="['/recipe-database']">Search <span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right"> <!-- right side of the navigation area -->
         <ng-template [ngIf]="!authservice.isAuthenticated()">
           <li routerLinkActive="active"><a [routerLink]="['/singup']">Register</a></li>
           <li routerLinkActive="active"><a [routerLink]="['/singin']">Login</a></li>
         </ng-template>
+        <li><a *ngIf="authservice.isAuthenticated()" style="cursor: pointer" (click)="onSaveData()" class="btn btn-outline" id="savebutton">Save Data</a></li>
+        <li routerLinkActive="active" *ngIf="authservice.isAuthenticated()" ><a [routerLink]="['/recipe-database']">Search <span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
+        <li class="dropdown" appDropdown *ngIf="authservice.isAuthenticated()">
+        <!--<a  class="dropdown-toggle" role="button" style="cursor: pointer">Manage<span class="caret"></span></a>
+        <ul class="dropdown-menu">-->
+          <!--<li><a style="cursor: pointer" (click)="onFetchData()">Fetch Data</a></li>-->
+         <!--  </ul>
+          </li>-->
         <li><a style="cursor: pointer;"
                (click)="onLogOut()"
                *ngIf="authservice.isAuthenticated()"
-               >LogOut</a></li>
-        <li class="dropdown" appDropdown *ngIf="authservice.isAuthenticated()">
-        <a  class="dropdown-toggle" role="button" style="cursor: pointer">Manage<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a style="cursor: pointer" (click)="onSaveData()">Save Data</a></li>
-          <li><a style="cursor: pointer" (click)="onFetchData()">Fetch Data</a></li>
-           </ul>
-          </li>
+        >LogOut</a></li>
         </ul>
       </div>
     </div>

@@ -1,8 +1,13 @@
 <div class="row">
-  <div class="col-md-6">
-    <img src="http://www.premiereproduzioni.com/img.jpg">
+<div class="col-md-6">
+  <app-db-item
+    *ngFor="let recipeEl of recipes; let i = index"
+    [recipe]="recipeEl"
+    [index]="i"
+  ></app-db-item>
   </div>
 </div>
+
 <!--
 <div class="container">
   <div class="row">

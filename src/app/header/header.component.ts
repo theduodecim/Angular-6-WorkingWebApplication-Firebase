@@ -13,6 +13,7 @@ export class HeaderComponent {
   constructor(private DataStService: DataStoregeService, private authservice: AuthService) {}
   icon: string;
   fullPath: string;
+
   onSaveData() {
     this.DataStService.storeRecipe()
       .subscribe(
@@ -25,7 +26,6 @@ export class HeaderComponent {
   onLogOut() {
     this.authservice.logOut();
   }
-
 
   onFetchData () {
     this.DataStService.getRecipes();

@@ -5,7 +5,6 @@ import { Recipe } from '../recipes/recipes.model';
 import 'rxjs/add/operator/map';
 import {AuthService} from '../auth/auth.service';
 
-
 @Injectable()
 export class DataStoregeService {
 

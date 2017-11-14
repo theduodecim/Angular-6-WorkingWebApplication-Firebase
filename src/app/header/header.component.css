@@ -1,0 +1,7 @@
+#savebutton:active {
+  background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 100%);
+  display: inline-block;
+}
+#savebutton:hover {
+  background-color: #4CAF50;
+}
