@@ -6,6 +6,7 @@ import {RecipeStartComponent} from './recipe-start/recipe-start.component';
 import {RecipesComponent} from './recipes.component';
 import {AuthGuardService} from '../auth/auth-guard.service';
 import {RecipeDatabaseComponent} from './recipe-database/recipe-database.component';
+import {NotFoundComponent} from '../core/not-found/not-found.component';
 
 const recipesRoutes: Routes = [
   { path: 'recipe', component: RecipesComponent, children: [
@@ -15,6 +16,8 @@ const recipesRoutes: Routes = [
     {path: ':id/edit', component: RecipeEditComponent, canActivate: [AuthGuardService] }
   ]},
   { path: 'recipe-database', component: RecipeDatabaseComponent, canActivate: [AuthGuardService] },
+  {path: 'not-found', component: NotFoundComponent, pathMatch: 'full' },
+  {path: '**', redirectTo: '/not-found', data :{message: 'Not Found'}}
 ];
 
 
@@ -24,6 +27,9 @@ const recipesRoutes: Routes = [
   ],
   exports: [
     RouterModule
+  ],
+  providers: [
+    AuthGuardService
   ]
 })
 export class RecipesRoutingModule {}

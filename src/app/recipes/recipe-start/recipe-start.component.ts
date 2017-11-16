@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Params } from '@angular/router';
-import {HeaderComponent} from '../../header/header.component';
+import {HeaderComponent} from '../../core/header/header.component';
 
 @Component({
   selector: 'app-recipe-start',

@@ -1,19 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { ShopingListService } from './shoping-list/shoping-list.service';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpModule} from '@angular/http';
-import {DataStoregeService} from './shared/data-storege.service';
-import {RecipesService} from './recipes/recipes.service';
-import {NotFoundComponent} from './not-found/not-found.component';
-import {AuthService} from './auth/auth.service';
-import {AuthGuardService} from './auth/auth-guard.service';
 import {RecipesModule} from './recipes/recipes.module';
 import {SharedModule} from './shared/shared.module';
 import {ShopingModule} from './shoping-list/Shoping-module';
 import {AuthModule} from './auth/auth-module';
+import {CoreModule} from './core/core.module';
 
 /*export const firebaseConfig = {
   apiKey: '',
@@ -29,8 +23,6 @@ import {AuthModule} from './auth/auth-module';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    NotFoundComponent,
   ],
   imports: [
     BrowserModule, // the browser module give us the same acces of common module and some features needed when the application starts
@@ -39,10 +31,11 @@ import {AuthModule} from './auth/auth-module';
     RecipesModule,
     SharedModule,
     ShopingModule,
-    AuthModule
+    AuthModule,
+    CoreModule
     /*AngularFireModule.initializerApp(firebaseConfig)*/
   ],
-  providers: [ShopingListService, RecipesService, DataStoregeService, AuthService, AuthGuardService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

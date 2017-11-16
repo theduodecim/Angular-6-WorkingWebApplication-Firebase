@@ -1,7 +1,7 @@
-import {Component, Input} from '@angular/core';
-import { DataStoregeService } from '../shared/data-storege.service';
+import {Component} from '@angular/core';
+import { DataStoregeService } from '../../shared/data-storege.service';
 import { Response } from '@angular/http';
-import {AuthService} from '../auth/auth.service';
+import {AuthService} from '../../auth/auth.service';
 
 
 @Component({

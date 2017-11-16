@@ -12,6 +12,7 @@ import {CommonModule} from '@angular/common';
 import {RecipesRoutingModule} from './recipes-routing.module';
 import {DBItemComponent} from './recipe-database/db-item/db-item.component';
 import {SharedModule} from '../shared/shared.module';
+import {NotFoundComponent} from '../core/not-found/not-found.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {SharedModule} from '../shared/shared.module';
     RecipeStartComponent,
     RecipeDatabaseComponent,
     RecipeFilterPipe,
-    DBItemComponent
+    DBItemComponent,
+    NotFoundComponent
   ],
   imports: [
     CommonModule, // aways CommonModule is imported to give acces to the common features like ngclass ng for ng if
