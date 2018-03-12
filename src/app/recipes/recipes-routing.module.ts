@@ -9,7 +9,8 @@ import {RecipeDatabaseComponent} from './recipe-database/recipe-database.compone
 import {NotFoundComponent} from '../core/not-found/not-found.component';
 
 const recipesRoutes: Routes = [
-  { path: 'recipe', component: RecipesComponent, children: [
+  {
+    path: 'recipe', component: RecipesComponent, children: [
     {path: '', component: RecipeStartComponent},
     {path: 'new', component: RecipeEditComponent, canActivate: [AuthGuardService] } ,
     {path: ':id',  component: RecipesDetailComponent},

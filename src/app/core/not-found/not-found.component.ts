@@ -7,7 +7,7 @@ import {ActivatedRoute, Data} from '@angular/router';
   styleUrls: ['./not-found.component.css']
 })
 export class NotFoundComponent implements OnInit {
-errorMessage: string;
+  errorMessage: string;
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {

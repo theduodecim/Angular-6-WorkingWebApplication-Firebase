@@ -7,11 +7,14 @@ import * as firebase from 'firebase';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit{
   loadedFeature = 'recipe'
   onNavigate(feature: string) {
     this.loadedFeature = feature;
     }
+
+
     ngOnInit() {
     firebase.initializeApp({
       apiKey: "AIzaSyBDB1VVZNFUXNsOqGA53QiJSeyld8QdGCs",

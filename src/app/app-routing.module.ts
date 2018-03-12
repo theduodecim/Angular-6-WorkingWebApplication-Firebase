@@ -5,7 +5,6 @@ import {SigninComponent} from './auth/signin/signin.component';
 import {ShopingListComponent} from './shoping-list/shoping-list.component';
 import {HomeComponent} from './core/home/home.component';
 import {ContactComponent} from './core/contact/contact.component';
-import {NotFoundComponent} from './core/not-found/not-found.component';
 
 
 

@@ -6,16 +6,20 @@ import {Injectable} from '@angular/core';
 
 export class AuthService {
   token: string;
-constructor(private router: Router){}
+constructor(private router: Router) {}
   signUpUser(email: string, password: string) {
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then(
-        response => console.log(response)
-      )
+   return  firebase.auth().createUserWithEmailAndPassword(email, password)
+     .then(
+       response => {
+         this.router.navigate(['/singin']);
+          console.log(response)
+       }
+       )
       .catch(
         error => console.log(error)
       );
   }
+
   signInUser(email: string, password: string) {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(
@@ -23,7 +27,7 @@ constructor(private router: Router){}
           this.router.navigate(['/']);
           firebase.auth().currentUser.getToken()
             .then(
-              (token: string) => this.token = token
+              (token: string) => this.token = token // with the user value we convert it in a token
         )
       }
     )
@@ -32,6 +36,7 @@ constructor(private router: Router){}
       );
 
   }
+
   logOut() {
     firebase.auth().signOut();
     this.token = null;
@@ -44,6 +49,7 @@ constructor(private router: Router){}
       );
     return this.token
   }
+
 
   isAuthenticated() {
     return this.token != null;
